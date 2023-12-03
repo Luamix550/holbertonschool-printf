@@ -1,4 +1,33 @@
-C - printf
+ 
+<div align="center">
+    <h1>Printf Project</h1>
+    <img src=
+&style=for-the-badge">
+</div>
+
+## Authors
+Luis Alfonso Diaz
+Maria Alejandra Gonzalez Londoño
+
+## Description
+
+
+
+## Man page
+
+
+
+## Flowchart
+
+
+
+## Usage
+
+
+| Indicator  | Data type | Description |
+
+
+
 
 Tasks
 
@@ -79,5 +108,3 @@ r  : prints the reversed string.
 R : prints the rot13'ed string
 
 16. All the above options work well together.
-
-
