@@ -18,7 +18,7 @@ int verify_string(const char *format, char *buffer)
 {
     if (format != NULL || buffer != NULL)
     {
-        return (-1);
+        return (1);
     }
     return (0);
 }

@@ -9,11 +9,6 @@ int _printf(const char *format, ...)
     size_t leng = _strlen(format);
 
     buffer = malloc(leng);
-
-    if (!buffer)
-    {
-        return -1;
-    }
     
     if (!verify_string(format, buffer))
     {
