@@ -1,46 +1,29 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
 
-/**
- * _print - that prints anything.
- * @format: is a character string.
- * Return: the number of characters printed.
- */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0;
-	va_list arg;
-	char *str;
-	int argument;
+    char *buffer;
+    int i = 0;
+    int count = 0;
 
-	va_start(arg, format);
+    size_t leng = _strlen(format);
 
-	while (format[i] != '\0')
-	{
-		switch (format[i])
-		{
-			case 'c':
-				argument = printf("%c\n", va_arg(arg, int) - 1);
-				return (argument);
-				break;
-			case '%':
-				argument = printf("%%\n", va_arg(arg, int) - 1);
-				return (argument);
-				break;
-			case 's':
-				str = va_arg(arg, char *);
-				argument = printf("%s\n", str);
-				return (argument - 1);
-				break;
+    buffer = malloc(leng);
+    
+    if (!verify_string(format, buffer))
+    {
+        exit(0);
+    }
 
-			default:
-				i++;
-				break;
-		}
-		i++;
-	}
-	return (format[i]);
-	printf("\n");
-	va_end(arg);
+    for (; i < _strlen(format); i++)
+    {
+        if (format[i] != '%')
+        {
+            buffer[count] = format[i];
+            count++;
+        }
+    }
+    write(1, buffer, count);
+    free(buffer);
+    return (count);
 }
