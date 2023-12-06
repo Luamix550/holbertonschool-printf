@@ -35,6 +35,7 @@ Note that we will not provide the _putchar function for this project</p>
 <h1>Flowchart</h1>
 
 </body>
+
 </html>
 
 
@@ -118,3 +119,4 @@ r  : prints the reversed string.
 R : prints the rot13'ed string
 
 16. All the above options work well together.
+

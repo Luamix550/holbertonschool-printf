@@ -12,6 +12,7 @@
 #include <string.h>
 #include <stdarg.h>
 
+
 typedef struct funct
 {
 	char *ptr;
