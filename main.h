@@ -12,6 +12,13 @@
 #include <string.h>
 #include <stdarg.h>
 
+typedef struct funct
+{
+	char *ptr;
+	int (*f)(char *, int);
+} funct_t;
+int (*get_funct(const char *arg))(*f)(char *, int, va_list)
+
 int _printf(const char *format, ...);
 
 int _strlen(const char* str);

@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
         {
             buffer[count] = format[i];
             count++;
-        }
+	} 
     }
     write(1, buffer, count);
     free(buffer);
