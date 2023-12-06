@@ -27,8 +27,9 @@ int (*get_funct(const char *arg))(char *, int, va_list)
 {
 
 	funct_t form[] = {
-		/*{"c", print_chr},*/
-        {"s", print_str},
+		{"c", print_chr},
+		{"s", print_str},
+		{"%", print_mod},
 		{NULL, NULL}
 	};
 
@@ -57,4 +58,18 @@ int print_str(char *buffer, int count, va_list args)
         count++;
     }
     return (count);
+}
+int print_chr(char *buffer, int count, va_list args)
+{
+    char c = va_arg(args, int);
+    buffer[count] = c;
+    count++;
+    return count;
+}
+
+int print_mod(char *buffer, int count, va_list __attribute__((unused)) list)
+{
+    buffer[count] = '%';
+    count++;
+    return count;
 }
