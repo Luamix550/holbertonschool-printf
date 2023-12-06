@@ -23,11 +23,38 @@ int verify_string(const char *format, char *buffer)
     return (0);
 }
 
-int (*get_funct(const char *arg))(*f)(char *, int, va_list)
+int (*get_funct(const char *arg))(char *, int, va_list)
 {
+
 	funct_t form[] = {
-		{"s", type_str},
+		/*{"c", print_chr},*/
+        {"s", print_str},
 		{NULL, NULL}
 	};
-	int i = 0;
+
+    int i = 0;
+
+    while (i < 3)
+    {
+        if (*arg == *(form[i]).ptr)
+            return ((form[i].f));
+        i++;
+    }
+    return (NULL);
+}
+
+
+int print_str(char *buffer, int count, va_list args)
+{
+    char *s;
+    int i = 0;
+    s = va_arg(args, char *);
+
+    while (i <= _strlen(s))
+    {
+        buffer[i] = s[i];
+        i++;
+        count++;
+    }
+    return (count);
 }

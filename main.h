@@ -13,12 +13,7 @@
 #include <stdarg.h>
 
 
-typedef struct funct
-{
-	char *ptr;
-	int (*f)(char *, int);
-} funct_t;
-int (*get_funct(const char *arg))(*f)(char *, int, va_list)
+int (*get_funct(const char *arg))(char *, int, va_list);
 
 int _printf(const char *format, ...);
 
@@ -26,6 +21,16 @@ int _strlen(const char* str);
 
 int verify_string(const char *format, char *buffer);
 
-char *my_itoa(int num, char *str);
+
+typedef struct funct
+{
+	char *ptr;
+	int (*f)(char *, int, va_list); 
+
+} funct_t;
+
+int print_str(char *buffer, int count, va_list args);
+/*int print_chr(char *buffer, int count, va_list args);*/
+
 
 #endif
