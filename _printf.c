@@ -32,9 +32,6 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, list);
             i++;
             }
-            if (f == NULL){
-                return (-1);
-            }
         }
         else
         {
