@@ -23,7 +23,7 @@ int print_str(char *buffer, int counter, va_list list)
     s = va_arg(list, char*);
     if (s == NULL)
         s = "(null)";
-    while (s[i] != '\0')
+    while (i < _strlen(s))
     {
         buffer[i] = s[i];
         i++;

@@ -7,15 +7,18 @@
 int _printf(char *format, ...)
 {
     int i = 0, counter = 0;
+
     int (*f)(char *, int, va_list);
     char *buffer = malloc(2000);
+
     va_list list;
+
+    va_start(list, format);
 
     if (correct_printf(format, buffer))
         return (-1);
-    va_start(list, format);
 
-    for (; format[i] != '\0'; i++)
+    for (; i < _strlen(format); i++)
     {
         if (format[i] != '%')
         {
