@@ -20,37 +20,38 @@ int verify_string(const char *format, char *buffer)
 
 int (*get_funct(const char *arg))(char *, int, va_list)
 {
-    printf("\nLINEA 23 func.c\n");
+    int i = 0;
     funct_t form[] = {
         {"c", print_chr},
         {"s", print_str},
         {"%", print_mod},
-        {NULL, NULL}};
+        {NULL, NULL}
+    };
 
-    int i = 0;
-
-    while (i < 4) {
-        printf("\nLINEA 33 func.c\n");
-        if (*arg == *(form[i]).ptr)
-            return ((form[i].f));
+    while (i < 2) {
+        if (*arg == form[i].ptr) {
+            return form[i].f;
+        }
         i++;
     }
-    return (NULL);
+    return NULL;
 }
 
 int print_str(char *buffer, int count, va_list args)
 {
-    printf("\nLINEA 42 func.c\n");
     char *s;
     int i = 0;
+
     s = va_arg(args, char *);
-    
-    for (; i < _strlen(s); i++) {
-    buffer[i] = s[i];
-    count++;
-}
+
+    while (i < _strlen(s)) {
+        buffer[i] = s[i];
+        i++;
+        count++;
+    }
     return count;
 }
+
 int print_chr(char *buffer, int count, va_list args)
 {
     char c = va_arg(args, int);
