@@ -23,7 +23,7 @@ int _printf(char *format, ...)
             buffer[counter] = format[i];
             counter++;
         }
-        else if (format[i] == '%' && !verify_format(format[i + 1]))
+        else if (format[i] == '%')
         {
             f = select_funct(&(format[i + 1]));
             if (f != NULL)
@@ -31,6 +31,8 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, list);
             i++;
             }
+            else if (format[0] == '%' && format[1] == '\0')
+                return (-1);
         }
         else
         {
