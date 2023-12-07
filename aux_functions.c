@@ -29,3 +29,11 @@ int correct_printf(char *format, char *buffer){
         return -1;
     return 0;
 }
+
+int program_closure(char *buffer, int counter, va_list args){
+    /*buffer[counter] = '\0';*/
+    write (1, buffer, counter);
+    free (buffer);
+    va_end (args);
+    return counter;
+}
