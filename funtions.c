@@ -20,7 +20,7 @@ int (*get_funct(const char *arg))(char *, int, va_list)
         {NULL, NULL}
     };
 
-    while (i < 4) {
+    while (i < 3) {
         if (*arg == form[i].ptr[0]) {
             return form[i].f;
         }
@@ -59,6 +59,14 @@ int print_mod(char *buffer, int count, va_list __attribute__((unused)) list)
     return count;
 }
 
+int print_mod2(char *buffer, int count, va_list __attribute__((unused)) list)
+{
+    printf("ENTRO0");
+    buffer[0] = '%';
+    count++;
+    return count;
+}
+
 int correct_printf(const char *format, char *buffer)
     {
     int percent_char = _strchr(format);
@@ -85,7 +93,7 @@ int correct_printf(const char *format, char *buffer)
 int verify_format(char arg)
 {
 
-if (arg == 's' || arg == 'c' || arg == '%')
+if (arg == 's' || arg == 'c' || arg == '%' || arg == ' ')
     return (0);
 
 else
