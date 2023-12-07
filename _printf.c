@@ -15,6 +15,7 @@ int _printf(char *format, ...)
     va_start(args, format);
 
     if (correct_printf(format, buffer))
+        return (-1);
 
     for (; i < _strlen(format); i++)
     {
