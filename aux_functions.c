@@ -28,7 +28,7 @@ int correct_printf(char *format, char *buffer){
     if (!format || !buffer)
         return -1;
     else
-        return 1;
+        return 0;
 }
 
 int program_closure(char *buffer, int counter, va_list args){
