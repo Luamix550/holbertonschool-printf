@@ -30,6 +30,10 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, list);
             i++;
             }
+            else {
+                buffer[counter] = format[i];
+                counter++;
+            }
         }
         else
         {
