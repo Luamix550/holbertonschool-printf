@@ -12,11 +12,9 @@ int _printf(char *format, ...)
     va_list list;
 
     va_start(list, format);
-    printf("\nPRINTT\n");
     if (!correct_printf(format, buffer))
         exit(1);
     for (; format[i] != '\0'; i++)
-    printf("\nPRINTT\n");
     {
         if (format[i] != '%')
         {
