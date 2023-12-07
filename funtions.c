@@ -29,7 +29,7 @@ int (*get_funct(const char *arg))(char *, int, va_list)
         {NULL, NULL}
     };
 
-    while (i < 2) {
+    while (i < 4) {
         if (*arg == form[i].ptr[0]) {
             return form[i].f;
         }
@@ -63,7 +63,7 @@ int print_chr(char *buffer, int count, va_list args)
 
 int print_mod(char *buffer, int count, va_list __attribute__((unused)) list)
 {
-    buffer[count] = '%';
+    buffer[0] = '%';
     count++;
     return count;
 }
