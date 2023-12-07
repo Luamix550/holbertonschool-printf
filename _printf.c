@@ -31,7 +31,7 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, list);
             i++;
             }
-            else if (format[0] == '%' && format[1] == '\0')
+            else if (format[i] == '%' && format[i + 1] == '\0')
                 return (-1);
         }
         else
