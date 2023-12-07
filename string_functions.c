@@ -7,3 +7,14 @@ int _strlen(char *str){
 
     return (i);
 }
+
+int _strchr(char *format) {
+    int i = 0;
+
+    for (; i < _strlen(format); i++) {
+        if (format[i] == '%') {
+            return i;
+        }
+    }
+    return -1;
+}

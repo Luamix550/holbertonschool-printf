@@ -14,7 +14,7 @@ typedef struct funct
     int (*f)(char *, int, va_list list);
 } func_t;
 
-
+int _strchr(char *format);
 int program_closure(char *buffer, int counter, va_list args);
 int _strlen(char *str);
 /*prototypes*/
