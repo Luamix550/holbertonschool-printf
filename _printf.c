@@ -32,6 +32,11 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, args);
             i++;
             }
+            else if (format[i] == '%' && format[i + 1] == '\0')
+            {
+                return -1;
+            }
+            
             else {
                 buffer[counter] = format[i];
                 counter++;

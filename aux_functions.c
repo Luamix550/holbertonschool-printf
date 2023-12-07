@@ -25,18 +25,13 @@ int (*select_funct(char *arg))(char *, int, va_list)
 }
 
 int correct_printf(char *format, char *buffer){
-    int percent_char = _strchr(format);
-
-    if (format[percent_char] == '%' && format[percent_char + 1] == '\0')
-        return -1;
     if (!format || !buffer)
-        return NULL;
+        return -1;
     else
         return 0;
 }
 
 int program_closure(char *buffer, int counter, va_list args){
-    /*buffer[counter] = '\0';*/
     write (1, buffer, counter);
     free (buffer);
     va_end (args);
