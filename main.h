@@ -8,23 +8,28 @@
 #include <string.h>
 #include <unistd.h>
 
+/*Struct*/
 typedef struct funct
 {
     char *ptr;
     int (*f)(char *, int, va_list list);
 } func_t;
 
-int _strchr(char *format);
-int comprobate_data(char *format, char *buffer);
-int program_closure(char *buffer, int counter, va_list args);
-int _strlen(char *str);
 /*prototypes*/
-int _printf(char *format, ...); /*Prototype of _printf*/
-int _putchar(char c);
+int _printf(char *format, ...);
+
+/*Print_functs*/
 int print_str(char *, int, va_list);
 int print_chr(char *, int, va_list);
-int print_int(char *buff, int count, va_list args);
 int print_mod(char *, int, va_list __attribute__((unused)));
+
+/*Auxiliar functs*/
 int correct_printf(char *, char*);
 int (*select_funct(char *arg))(char *, int, va_list);
+int program_closure(char *buffer, int counter, va_list args);
+
+/*String fucts*/
+int _strchr(char *format);
+int _strlen(char *str);
+
 #endif

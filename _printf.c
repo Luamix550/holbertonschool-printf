@@ -15,7 +15,6 @@ int _printf(char *format, ...)
     va_start(args, format);
 
     if (correct_printf(format, buffer))
-        return (-1);
 
     for (; i < _strlen(format); i++)
     {
@@ -36,7 +35,6 @@ int _printf(char *format, ...)
             {
                 return -1;
             }
-            
             else {
                 buffer[counter] = format[i];
                 counter++;
