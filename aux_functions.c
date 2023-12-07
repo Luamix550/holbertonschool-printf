@@ -25,7 +25,6 @@ int (*select_funct(char *arg))(char *, int, va_list)
 }
 
 int correct_printf(char *format, char *buffer){
-    int percent_char = _strchr(format);
 
     if (!format || !buffer)
         return -1;
