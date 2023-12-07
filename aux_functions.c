@@ -26,7 +26,7 @@ int (*select_funct(char *arg))(char *, int, va_list)
 
 int correct_printf(char *format, char *buffer){
     if (!format || !buffer)
-        return -1;
+        return 1;
     else
         return 0;
 }
