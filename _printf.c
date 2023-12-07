@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 
     va_start(args, format);
 
+    if(correct_printf(format, buffer))
+
     for (; i <= _strlen(format); i++)
     {
         if (format[i] == '%')
@@ -31,8 +33,6 @@ int _printf(const char *format, ...)
         }
         }
     }
-    write(1, buffer, count);
-    free(buffer);
-    va_end(args);
+    program_closure(buffer, count, args);
     return (count);
 }

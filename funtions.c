@@ -10,15 +10,6 @@ int _strlen(const char *str)
     count--;
     return count;
 }
-
-int verify_string(const char *format, char *buffer)
-{
-    if (format != NULL && buffer != NULL) {
-        return 1;
-    }
-    return 0;
-}
-
 int (*get_funct(const char *arg))(char *, int, va_list)
 {
     int i = 0;
@@ -66,4 +57,56 @@ int print_mod(char *buffer, int count, va_list __attribute__((unused)) list)
     buffer[0] = '%';
     count++;
     return count;
+}
+
+int correct_printf(const char *format, char *buffer)
+    {
+    int percent_char = _strchr(format);
+
+    if (!format || !buffer)
+        {
+        fprintf(stderr, "The value is NULL.\n");
+        exit (0);
+        }
+    
+    else if (format[percent_char] == '%' && verify_format(format[percent_char + 1]) == 1)
+        {
+            fprintf(stderr, "EL FORMATO INGRESADO ES INCORRECTO.\n");
+            exit (0);
+        }
+
+    else
+        {
+        return (1);
+        }
+
+}
+
+int verify_format(char arg)
+{
+
+if (arg == 's' || arg == 'c' || arg == '%')
+    return (0);
+
+else
+    return (1);
+
+}
+
+int program_closure(char *buffer, int counter, va_list args){
+    write (1, buffer, counter);
+    free (buffer);
+    va_end (args);
+    return counter;
+}
+
+int _strchr(const char *format) {
+    int i = 0;
+
+    for (; i < _strlen(format); i++) {
+        if (format[i] == '%') {
+            return i;
+        }
+    }
+    return -1;
 }
