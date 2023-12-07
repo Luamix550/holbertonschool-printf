@@ -14,15 +14,13 @@ typedef struct funct
     int (*f)(char *, int, va_list list);
 } func_t;
 
+
+int _strlen(char *str);
 /*prototypes*/
 int _printf(char *format, ...); /*Prototype of _printf*/
 int _putchar(char c);
 int print_str(char *, int, va_list);
 int print_chr(char *, int, va_list);
-int _abs(int n);
-char *_reverse(char *s, int n);
-int _select(char *buffer, int counter, char *forma);
-char *_itoa(int value, int base);
 int print_int(char *buff, int count, va_list value);
 int print_mod(char *, int, va_list __attribute__((unused)));
 int correct_printf(char *, char*);

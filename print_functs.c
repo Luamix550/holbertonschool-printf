@@ -1,28 +1,4 @@
 #include "main.h"
-/**
- * select_funct - selection char
- * @arg: verification
- * Return: pointer for function
- */
-int (*select_funct(char *arg))(char *, int, va_list)
-{
-    int i = 0;
-    func_t form[] = {
-
-        {"c", print_chr},
-        {"s", print_str},
-        {"%", print_mod},
-        {NULL, NULL}
-    };
-
-    while (i < 3)
-    {
-        if (*arg == *(form[i]).ptr)
-            return ((form[i].f));
-        i++;
-    }
-    return NULL;
-}
 
 int print_chr(char *buffer, int counter, va_list list)
 {
@@ -30,6 +6,7 @@ int print_chr(char *buffer, int counter, va_list list)
     counter++;
     return (counter);
 }
+
 /**
  * print_str - print a string.
  * @buffer: string buf.
@@ -54,6 +31,7 @@ int print_str(char *buffer, int counter, va_list list)
     }
     return (counter);
 }
+
 /**
 * print_mod - print '%' character
 * @buffer: character buf
