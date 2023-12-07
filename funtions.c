@@ -7,6 +7,7 @@ int _strlen(const char *str)
         count++;
         str++;
     }
+    count--;
     return count;
 }
 
@@ -47,8 +48,8 @@ int print_str(char *buffer, int count, va_list args)
     while (i < _strlen(s)) {
         buffer[i] = s[i];
         i++;
-        count++;
     }
+    count++;
     return count;
 }
 
