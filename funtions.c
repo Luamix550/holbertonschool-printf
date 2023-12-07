@@ -15,13 +15,13 @@ int (*select_funct(char *arg))(char *, int, va_list)
         {NULL, NULL}
     };
 
-    while (form[i].ptr != NULL)
+    while (i < 3)
     {
         if (*arg == *(form[i]).ptr)
             return ((form[i].f));
         i++;
     }
-    return (NULL);
+    return NULL;
 }
 
 int print_chr(char *buffer, int counter, va_list list)

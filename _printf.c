@@ -20,16 +20,20 @@ int _printf(char *format, ...)
     {
         if (format[i] != '%')
         {
+            printf("\n!=%\n");
             buffer[counter] = format[i];
             counter++;
         }
-        else if (format[i] == '%' && !verify_format(format[i + 1]))
+        if (format[i] == '%')
         {
             f = select_funct(&(format[i + 1]));
             if (f != NULL)
             {
             counter = f(&buffer[counter], counter, list);
             i++;
+            }
+            if (f == NULL){
+                return (-1);
             }
         }
         else

@@ -11,13 +11,13 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf(NULL);
-	len2 = printf(NULL);
+	len = _printf("%");
+	len2 = printf("%");
 	fflush(stdout);
 	if (len != len2)
 	{
-		printf("\nlength _print %d\n", len);
-		printf("\nlength print %d\n", len2);
+		printf("Len. - > %d\n", len);
+		printf("Len2. - > %d\n", len2);
 		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
