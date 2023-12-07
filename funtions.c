@@ -68,18 +68,3 @@ int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list)
     counter++;
     return (counter);
 }
-
-/**
- * correct_printf - correct output
- * @format: point argument base
- * @buffer: point long memory
- * Return: 0
- *
-*/
-int correct_printf(char *format, char *buffer)
-{
-    if (!format || !buffer)
-        return (-1);
-    else
-        return (1);
-}
