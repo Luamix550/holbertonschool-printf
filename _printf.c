@@ -41,12 +41,8 @@ int _printf(char *format, ...)
                 counter++;
             }
         }
-        else
-        {
-            buffer[counter] = format[i];
-            counter++;
-        };
     }
+
     program_closure(buffer, counter, args);
     return (counter);
 }
