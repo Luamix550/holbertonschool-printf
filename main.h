@@ -15,6 +15,7 @@ typedef struct funct
 } func_t;
 
 int _strchr(char *format);
+int comprobate_data(char *format, char *buffer);
 int program_closure(char *buffer, int counter, va_list args);
 int _strlen(char *str);
 /*prototypes*/
