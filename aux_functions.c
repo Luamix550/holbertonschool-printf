@@ -29,7 +29,8 @@ int correct_printf(char *format, char *buffer){
 
     if ((!format || !buffer) || (format[percent_char] == '%' && format[percent_char + 1] == '\0'))
         return -1;
-    return 0;
+    else
+        return 0;
 }
 
 int program_closure(char *buffer, int counter, va_list args){
