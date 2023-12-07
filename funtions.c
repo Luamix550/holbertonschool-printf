@@ -1,120 +1,99 @@
 #include "main.h"
-
-int _strlen(const char *str)
-{
-    int count = 0;
-    while (*str != '\0') {
-        count++;
-        str++;
-    }
-    count--;
-    return count;
-}
-int (*get_funct(const char *arg))(char *, int, va_list)
+/**
+ * select_funct - selection char
+ * @arg: verification
+ * Return: pointer for function
+ */
+int (*select_funct(char *arg))(char *, int, va_list)
 {
     int i = 0;
-    funct_t form[] = {
+    func_t form[] = {
+
         {"c", print_chr},
         {"s", print_str},
         {"%", print_mod},
         {NULL, NULL}
     };
 
-    while (i < 3) {
-        if (*arg == form[i].ptr[0]) {
-            return form[i].f;
-        }
+    while (i < 3)
+    {
+        if (*arg == *(form[i]).ptr)
+            return ((form[i].f));
         i++;
     }
-    return NULL;
+    return (NULL);
 }
 
-int print_str(char *buffer, int count, va_list args)
+int print_chr(char *buffer, int counter, va_list list)
+{
+    buffer[0] = va_arg(list, int);
+    counter++;
+    return (counter);
+}
+/**
+ * print_str - print a string.
+ * @buffer: string buf.
+ * @counter: count string
+ * @list: va_list arg
+ * Return: long to print
+*/
+
+int print_str(char *buffer, int counter, va_list list)
 {
     char *s;
     int i = 0;
 
-    s = va_arg(args, char *);
-
-    while (i < _strlen(s)) {
+    s = va_arg(list, char*);
+    if (s == NULL)
+        s = "(null)";
+    while (s[i] != '\0')
+    {
         buffer[i] = s[i];
         i++;
+        counter++;
     }
-    count++;
-    return count;
+    return (counter);
 }
+/**
+* print_mod - print '%' character
+* @buffer: character buf
+* @counter: counter string
+* @list: va_list arguments
+* Return: long to string
+*/
 
-int print_chr(char *buffer, int count, va_list args)
-{
-    char c = va_arg(args, int);
-    buffer[count] = c;
-    count++;
-    return count;
-}
-
-int print_mod(char *buffer, int count, va_list __attribute__((unused)) list)
+int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list)
 {
     buffer[0] = '%';
-    count++;
-    return count;
+    counter++;
+    return (counter);
 }
-
-int print_mod2(char *buffer, int count, va_list __attribute__((unused)) list)
+/**
+ * verify_format - verifies that only certain characters are received
+ * @v: the format character
+ * Return: 0 and if "v" is some characters return 1
+ *
+*/
+int verify_format(char v)
 {
-    printf("ENTRO0");
-    buffer[0] = '%';
-    count++;
-    return count;
-}
-
-int correct_printf(const char *format, char *buffer)
-    {
-    int percent_char = _strchr(format);
-
-    if (!format || !buffer)
-        {
-        fprintf(stderr, "The value is NULL.\n");
-        exit (0);
-        }
-    
-    else if (format[percent_char] == '%' && verify_format(format[percent_char + 1]) == 1)
-        {
-            fprintf(stderr, "EL FORMATO INGRESADO ES INCORRECTO.\n");
-            exit (0);
-        }
-
-    else
-        {
-        return (1);
-        }
-
-}
-
-int verify_format(char arg)
-{
-
-if (arg == 's' || arg == 'c' || arg == '%' || arg == ' ')
+if (v == 'd' || v == 'i' || v == 's' || v == 'c' || v == '%')
     return (0);
-
 else
     return (1);
-
 }
-
-int program_closure(char *buffer, int counter, va_list args){
-    write (1, buffer, counter);
-    free (buffer);
-    va_end (args);
-    return counter;
-}
-
-int _strchr(const char *format) {
-    int i = 0;
-
-    for (; i < _strlen(format); i++) {
-        if (format[i] == '%') {
-            return i;
-        }
-    }
-    return -1;
+/**
+ * correct_printf - correct output
+ * @format: point argument base
+ * @buffer: point long memory
+ * Return: 0
+ *
+*/
+int correct_printf(char *format, char *buffer)
+{
+    if (!format || !buffer)
+        return (1);
+    if (format[0] == '%' && format[1] == '\0')
+        return (1);
+    else
+        return (1);
 }

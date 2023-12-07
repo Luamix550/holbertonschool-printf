@@ -11,8 +11,19 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%\n");
+	len = _printf("%");
+	len2 = printf("%");
 	fflush(stdout);
-	
+	if (len != len2)
+	{
+        printf("%d  < - len\n", len);
+        printf("%d  < - len2\n", len2);
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	else {
+		printf("LUiS ES GAY");
+	}
 	return (0);
 }

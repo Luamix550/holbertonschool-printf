@@ -1,41 +1,31 @@
 #ifndef MAIN_H
 #define MAIN_H
-/*
- * File: main.h
- * Auth: Maria Alejandra Gonzalez - Luis Alfonso Diaz
- * Desc: Header file containing declarations for all functions
- *       used in the C - Printf.
- */
-#include <stdlib.h>
+
+/*libraries*/
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include <stdarg.h>
-
-int _strchr(const char *format);
-
-int (*get_funct(const char *arg))(char *, int, va_list);
-
-int program_closure(char *buffer, int counter, va_list args);
-
-int _printf(const char *format, ...);
-
-int _strlen(const char* str);
-
-int verify_format(char arg);
-
-int correct_printf(const char *format, char *buffer);
-
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 typedef struct funct
 {
-	char *ptr;
-	int (*f)(char *, int, va_list); 
+    char *ptr;
+    int (*f)(char *, int, va_list list);
+} func_t;
 
-} funct_t;
-
-int print_str(char *buffer, int count, va_list args);
-int print_chr(char *buffer, int count, va_list args);
-int print_mod(char *buffer, int count, va_list __attribute__((unused)) list);
-
+/*prototypes*/
+int _printf(char *format, ...); /*Prototype of _printf*/
+int _putchar(char c);
+int verify_format(char);
+int print_str(char *, int, va_list);
+int print_chr(char *, int, va_list);
+int _abs(int n);
+char *_reverse(char *s, int n);
+int _select(char *buffer, int counter, char *forma);
+char *_itoa(int value, int base);
+int print_int(char *buff, int count, va_list value);
+int print_mod(char *, int, va_list __attribute__((unused)));
+int correct_printf(char *, char*);
+int (*select_funct(char *arg))(char *, int, va_list);
 #endif
