@@ -17,7 +17,6 @@ typedef struct funct
 /*prototypes*/
 int _printf(char *format, ...); /*Prototype of _printf*/
 int _putchar(char c);
-int verify_format(char);
 int print_str(char *, int, va_list);
 int print_chr(char *, int, va_list);
 int _abs(int n);

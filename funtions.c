@@ -68,19 +68,7 @@ int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list)
     counter++;
     return (counter);
 }
-/**
- * verify_format - verifies that only certain characters are received
- * @v: the format character
- * Return: 0 and if "v" is some characters return 1
- *
-*/
-int verify_format(char v)
-{
-if (v == 'd' || v == 'i' || v == 's' || v == 'c' || v == '%')
-    return (0);
-else
-    return (1);
-}
+
 /**
  * correct_printf - correct output
  * @format: point argument base
@@ -91,7 +79,7 @@ else
 int correct_printf(char *format, char *buffer)
 {
     if (!format || !buffer)
-        return (1);
+        return (-1);
     else
-        return (1);
+        return (0);
 }

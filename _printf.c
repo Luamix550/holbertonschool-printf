@@ -11,10 +11,8 @@ int _printf(char *format, ...)
     char *buffer = malloc(2000);
     va_list list;
 
-    if (format == NULL || buffer == NULL)
-        return (-1);
     va_start(list, format);
-    if (!correct_printf(format, buffer))
+    if (correct_printf(format, buffer))
         exit(1);
     for (; format[i] != '\0'; i++)
     {
@@ -31,8 +29,6 @@ int _printf(char *format, ...)
             counter = f(&buffer[counter], counter, list);
             i++;
             }
-            else if (format[i] == '%' && format[i + 1] == '\0')
-                return (-1);
         }
         else
         {
