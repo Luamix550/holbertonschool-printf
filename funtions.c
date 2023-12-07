@@ -29,7 +29,7 @@ int (*get_funct(const char *arg))(char *, int, va_list)
     };
 
     while (i < 2) {
-        if (*arg == form[i].ptr) {
+        if (*arg == form[i].ptr[0]) {
             return form[i].f;
         }
         i++;
