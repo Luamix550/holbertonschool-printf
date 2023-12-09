@@ -31,7 +31,11 @@ typedef struct funct
 
 int print_str(char *buffer, int count, va_list args);
 int print_chr(char *buffer, int count, va_list args);
+<<<<<<< HEAD
 int print_mod(char *buffer, int count, va_list __attribute__((unused)) list);
+=======
+int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list);
+>>>>>>> d0a2f5f206e33df7e58bff9f6507f0790231f392
 
 
 #endif
