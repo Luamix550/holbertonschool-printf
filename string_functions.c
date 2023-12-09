@@ -64,9 +64,9 @@ int i = 0;
 
 for (; str[i] != '\0'; i++)
 {
-return (i);
-}
 
+}
+return (i);
 }
 
 /**
