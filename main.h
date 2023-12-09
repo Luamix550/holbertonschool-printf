@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <limits.h>
 
 /*Struct*/
 /**
@@ -23,22 +24,23 @@ int (*function)(char *, int, va_list list);
 /*prototypes*/
 int _printf(char *format, ...);
 
-/*Print_functs*/
-int print_str(char *, int, va_list);
-int print_chr(char *, int, va_list);
-int print_mod(char *, int, va_list __attribute__((unused)));
+/*String functions*/
+int print_str(char *, int , va_list);
+int print_chr(char *, int , va_list);
+int print_mod(char *buffer, int counter, va_list __attribute__((unused)));
 
-/*Auxiliar functs*/
+/*Aux functions*/
 int correct_printf(char *, char*);
 int (*select_funct(char *arg))(char *, int, va_list);
 int program_closure(char *buffer, int counter, va_list args);
+int _select(char *buffer, int counter, char *forma);
 
-/*String fucts*/
+
+/*String fuctions*/
 int _strchr(char *format);
 int _strlen(char *str);
 
-/*Number functs*/
-
+/*Number functions*/
 int print_int(char *buffer, int counter, va_list list);
 char *_itoa(int list, int base);
 char *_reverse(char *s, int n);

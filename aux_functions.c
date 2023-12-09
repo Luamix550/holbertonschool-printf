@@ -17,7 +17,7 @@ int (*select_funct(char *arg))(char *, int, va_list)
         {NULL, NULL}
     };
 
-    while (i < 3)
+    while (i < 5)
     {
         if (*arg == *(form[i]).character)
             return ((form[i].function));
@@ -39,4 +39,32 @@ int program_closure(char *buffer, int counter, va_list args)
     free (buffer);
     va_end (args);
     return counter;
+}
+
+/**
+ * _select - assignation the arguments
+ * @buffer: memory espace
+ * @counter: count
+ * @forma: pointer string
+ * Return: counter
+*/
+int _select(char *buffer, int counter, char *forma)
+{
+	int i = 0;
+
+	while (forma[i])
+	{
+		buffer[i] = forma[i];
+		counter++;
+		i++;
+	}
+	return (counter);
+}
+
+int correct_printf(char *format, char *buffer)
+{
+    if (!format || !buffer)
+        return 0;
+    else
+        return 1;
 }

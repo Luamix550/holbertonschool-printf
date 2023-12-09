@@ -7,13 +7,13 @@
  * @list: number for the list the arg the string
  * Return: 0
 */
-
 int print_chr(char *buffer, int counter, va_list list)
 {
 	buffer[0] = va_arg(list, int);
 	counter++;
 	return (counter);
 }
+
 /**
  * print_str - print a string.
  * @buffer: string buf.
@@ -21,7 +21,6 @@ int print_chr(char *buffer, int counter, va_list list)
  * @list: va_list arg
  * Return: long to print
 */
-
 int print_str(char *buffer, int counter, va_list list)
 {
 	char *s;
@@ -38,6 +37,7 @@ int print_str(char *buffer, int counter, va_list list)
 	}
 	return (counter);
 }
+
 /**
 * print_mod - print '%' character
 * @buffer: character buf
@@ -76,10 +76,3 @@ int _strchr(char *format)
     return -1;
 }
 
-int correct_printf(char *format, char *buffer)
-{
-    if (!format || !buffer)
-        return 0;
-    else
-        return 1;
-}
