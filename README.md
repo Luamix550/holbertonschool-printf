@@ -32,7 +32,6 @@ Note that we will not provide the _putchar function for this project</p>
 <p>Here we have the respective manual of our PrintF function, which contains some help when using Printf in our shell's</p>
 <p> In this manual you will find the different format specifiers that can be used with this function.</p>
 <h4>To enter the manual of this function, you must enter the man command and then the file name</h4> 
-<h1>Flowchart</h1>
 
 </body>
 

@@ -12,16 +12,12 @@ func_t form[] =
 {
 {"i", print_int},
 {"d", print_int},
-{"u", print_uint},
-{"o", print_oct},
-{"x", print_hex},
-{"X", print_hex_upper},
 {"c", print_chr},
 {"s", print_str},
 {"%", print_mod},
 {NULL, NULL}
 };
-while (i < 9)
+while (i < 5)
 {
 if (*arg == *(form[i]).character)
 return ((form[i].function));
