@@ -9,10 +9,15 @@
 #include <unistd.h>
 
 /*Struct*/
+/**
+ * struct funct - structure to access the formats
+ * @character: character
+ * @function: pointer to function
+*/
 typedef struct funct
 {
-    char *ptr;
-    int (*f)(char *, int, va_list list);
+char *character;
+int (*function)(char *, int, va_list list);
 } func_t;
 
 /*prototypes*/
@@ -31,5 +36,13 @@ int program_closure(char *buffer, int counter, va_list args);
 /*String fucts*/
 int _strchr(char *format);
 int _strlen(char *str);
+
+/*Number functs*/
+
+int print_int(char *buffer, int counter, va_list list);
+char *_itoa(int list, int base);
+char *_reverse(char *s, int n);
+int _abs(int n);
+
 
 #endif

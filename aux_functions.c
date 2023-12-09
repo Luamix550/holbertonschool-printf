@@ -7,8 +7,10 @@
 int (*select_funct(char *arg))(char *, int, va_list)
 {
     int i = 0;
-    func_t form[] = {
-
+    func_t form[] = 
+    {
+        {"i", print_int},
+        {"d", print_int},
         {"c", print_chr},
         {"s", print_str},
         {"%", print_mod},
@@ -17,21 +19,22 @@ int (*select_funct(char *arg))(char *, int, va_list)
 
     while (i < 3)
     {
-        if (*arg == *(form[i]).ptr)
-            return ((form[i].f));
+        if (*arg == *(form[i]).character)
+            return ((form[i].function));
         i++;
     }
     return NULL;
 }
 
-int correct_printf(char *format, char *buffer){
-    if (!format || !buffer)
-        return 0;
-    else
-        return 1;
-}
-
-int program_closure(char *buffer, int counter, va_list args){
+/**
+ * program_closure - Performs program closure operations.
+ * @buffer: Pointer to the output buffer.
+ * @counter: Counter for the number of characters written.
+ * @args: Variable arguments list.
+ * @Return: returns the counter of characters written.
+ */
+int program_closure(char *buffer, int counter, va_list args)
+{
     write (1, buffer, counter);
     free (buffer);
     va_end (args);

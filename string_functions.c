@@ -1,6 +1,7 @@
 #include "main.h"
 
-int _strlen(char *str){
+int _strlen(char *str)
+{
     int i = 0;
 
     for (; str[i] != '\0'; i++){}
@@ -8,13 +9,24 @@ int _strlen(char *str){
     return (i);
 }
 
-int _strchr(char *format) {
+int _strchr(char *format)
+{
     int i = 0;
 
-    for (; i < _strlen(format); i++) {
-        if (format[i] == '%') {
+    for (; i < _strlen(format); i++)
+    {
+        if (format[i] == '%')
+        {
             return i;
         }
     }
     return -1;
+}
+
+int correct_printf(char *format, char *buffer)
+{
+    if (!format || !buffer)
+        return 0;
+    else
+        return 1;
 }
