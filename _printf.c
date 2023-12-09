@@ -1,47 +1,49 @@
 #include "main.h"
 /**
-* _printf - function printf
-* @format: string format
-* Return: print value chars
-*/
+ * _printf - Custom printf function
+ * @format: Format string
+ * Return: Number of characters printed (excluding null byte)
+ */
 int _printf(char *format, ...)
 {
-    int i = 0, counter = 0;
+int i = 0, counter = 0;
 
-    int (*f)(char *, int, va_list);
-    char *buffer = malloc(2000);
+int (*function)(char *, int, va_list);
+char *buffer = malloc(2000);
 
-    va_list args;
-    va_start(args, format);
+va_list args;
+va_start(args, format);
 
-    if (!correct_printf(format, buffer))
-        return (-1);
+if (!correct_printf(format, buffer))
+return (-1);
 
-    for (; i < _strlen(format); i++)
-    {
-        if (format[i] != '%')
-        {
-            buffer[counter] = format[i];
-            counter++;
-        }
-        else if (format[i] == '%')
-        {
-            f = select_funct(&(format[i + 1]));
-            if (f != NULL)
-            {
-            counter = f(&buffer[counter], counter, args);
-            i++;
-            }
-            else if (format[i] == '%' && format[i + 1] == '\0')
-            {
-                return -1;
-            }
-            else {
-                buffer[counter] = format[i];
-                counter++;
-            }
-        }
-    }
-    program_closure(buffer, counter, args);
-    return (counter);
+for (; i < _strlen(format); i++)
+{
+if (format[i] != '%')
+{
+buffer[counter] = format[i];
+counter++;
+}
+else if (format[i] == '%')
+{
+function = select_funct(&(format[i + 1]));
+if (function != NULL)
+{
+counter = function(&buffer[counter], counter, args);
+i++;
+}
+else if (format[i + 1] == '\0')
+{
+return (-1);
+}
+else
+{
+buffer[counter] = format[i];
+counter++;
+}
+}
+}
+
+program_closure(buffer, counter, args);
+return (counter);
 }
