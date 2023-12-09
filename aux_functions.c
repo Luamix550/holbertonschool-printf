@@ -20,7 +20,6 @@ int (*select_funct(char *arg))(char *, int, va_list)
         {"%", print_mod},
         {NULL, NULL}
     };
-
     while (i < 9)
     {
         if (*arg == *(form[i]).character)
@@ -43,7 +42,6 @@ free(buffer);
 va_end(args);
 return (counter);
 }
-
 /**
  * _select - assignation the arguments
  * @buffer: memory espace
@@ -54,7 +52,6 @@ return (counter);
 int _select(char *buffer, int counter, char *forma)
 {
 int i = 0;
-
 while (forma[i])
 {
 buffer[i] = forma[i];
@@ -63,22 +60,20 @@ i++;
 }
 return (counter);
 }
-
 /**
  * correct_printf - Checks if the format and buffer strings are not NULL.
  * @format: The format string to be verified.
  * @buffer: The buffer string to be verified.
  * Return: 1 if both strings are valid, 0 if either is NULL.
  */
-
 int correct_printf(char *format, char *buffer)
 {
-	if (!format || !buffer)
-		return (0);
-	if (format[0] == '%' && format[1] == '\0')
-		return (0);
-	else
-		return (1);
+    if (!format || !buffer)
+        return (0);
+    if (format[0] == '%' && format[1] == '\0')
+        return (0);
+    else
+        return (1);
 }
 /**
  * verify_format - verifies that only certain characters are received
@@ -89,7 +84,7 @@ int correct_printf(char *format, char *buffer)
 int verify_format(char v)
 {
 if (v == 'd' || v == 'i' || v == 's' || v == 'c' || v == '%')
-	return (0);
+    return (0);
 else
-	return (1);
+    return (1);
 }

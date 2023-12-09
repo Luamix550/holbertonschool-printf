@@ -7,16 +7,12 @@
 int _printf(char *format, ...)
 {
     int i = 0, counter = 0;
-
     int (*function)(char *, int, va_list);
     char *buffer = malloc(2000);
-
     va_list args;
     va_start(args, format);
-
     if (!correct_printf(format, buffer))
         return (-1);
-
     for (; format[i] != '\0'; i++)
     {
         if (format[i] != '%')
@@ -44,7 +40,6 @@ int _printf(char *format, ...)
             counter++;
         };
     }
-
     program_closure(buffer, counter, args);
     return (counter);
 }
