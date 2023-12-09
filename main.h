@@ -19,6 +19,7 @@ typedef struct funct
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	char *ptr;
 	int (*f)(char *, int, va_list); 
 
@@ -35,6 +36,10 @@ int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list);
 =======
     char *ptr;
     int (*f)(char *, int, va_list list);
+=======
+char *character;
+int (*function)(char *, int, va_list list);
+>>>>>>> a8d0ec7adadc9a84e0a335427b176d8a129d2e52
 =======
 char *character;
 int (*function)(char *, int, va_list list);
@@ -60,6 +65,13 @@ int _select(char *buffer, int counter, char *forma);
 int _strchr(char *format);
 int _strlen(char *str);
 >>>>>>> b5b29fd5627d5b890f5755cef2908007975338c4
+
+/*Number functions*/
+int print_int(char *buffer, int counter, va_list list);
+char *_itoa(int list, int base);
+char *_reverse(char *s, int n);
+int _abs(int n);
+
 
 /*Number functions*/
 int print_int(char *buffer, int counter, va_list list);
