@@ -45,9 +45,5 @@ int print_int(char *buffer, int counter, va_list list);
 char *_itoa(int list, int base);
 char *_reverse(char *s, int n);
 int _abs(int n);
-int print_uint(char *, int, va_list);
-int print_oct(char *, int, va_list);
-int print_hex(char *, int, va_list);
-int print_hex_upper(char *, int, va_list);
 
 #endif
