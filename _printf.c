@@ -29,17 +29,17 @@ else if (format[i] == '%')
 function = select_funct(&(format[i + 1]));
 if (function != NULL)
 {
-    counter = function(&buffer[counter], counter, args);
-    i++;
+counter = function(&buffer[counter], counter, args);
+i++;
 }
 else if (format[i + 1] == '\0')
 {
-    return (-1);
+return (-1);
 }
 else
 {
-    buffer[counter] = format[i];
-    counter++;
+buffer[counter] = format[i];
+counter++;
 }
 }
 }

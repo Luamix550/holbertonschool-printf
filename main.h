@@ -25,8 +25,8 @@ int (*function)(char *, int, va_list list);
 int _printf(char *format, ...);
 
 /*String functions*/
-int print_str(char *, int , va_list);
-int print_chr(char *, int , va_list);
+int print_str(char *, int, va_list);
+int print_chr(char *, int, va_list);
 int print_mod(char *buffer, int counter, va_list __attribute__((unused)));
 
 /*Aux functions*/
