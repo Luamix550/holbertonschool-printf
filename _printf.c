@@ -1,38 +1,47 @@
 #include "main.h"
-
-int _printf(const char *format, ...)
+/**
+* _printf - function printf
+* @format: string format
+* Return: print value chars
+*/
+int _printf(char *format, ...)
 {
-    char *buffer;
-    int i = 0;
-    int count = 0;
-    va_list args;
+    int i = 0, counter = 0;
+
     int (*f)(char *, int, va_list);
+    char *buffer = malloc(2000);
 
-    size_t leng = _strlen(format);
-
-    buffer = malloc(leng);
-
+    va_list args;
     va_start(args, format);
 
-    for (; i <= _strlen(format); i++)
-{
-    if (format[i] != '%')
+    if (!correct_printf(format, buffer))
+        return (-1);
+
+    for (; i < _strlen(format); i++)
     {
-        buffer[count] = format[i];
-        count++;
-    }
-    else if (format[i] == '%')
-    {
-        f = get_funct(&(format[i + 1]));
-        if (f != NULL)
+        if (format[i] != '%')
         {
-            count = f(&buffer[count], count, args);
+            buffer[counter] = format[i];
+            counter++;
+        }
+        else if (format[i] == '%')
+        {
+            f = select_funct(&(format[i + 1]));
+            if (f != NULL)
+            {
+            counter = f(&buffer[counter], counter, args);
             i++;
+            }
+            else if (format[i] == '%' && format[i + 1] == '\0')
+            {
+                return -1;
+            }
+            else {
+                buffer[counter] = format[i];
+                counter++;
+            }
         }
     }
-}
-    write(1, buffer, count);
-    free(buffer);
-    va_end(args);
-    return (count);
+    program_closure(buffer, counter, args);
+    return (counter);
 }

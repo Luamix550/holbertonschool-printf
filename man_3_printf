@@ -1,0 +1,62 @@
+.\" Manpage for _printf
+
+_printf - format and print data.
+.TH _printf 8 december 2023.
+
+.SH NAME:
+	Man 3_printf
+
+.SH SYNOPSIS:
+	printf FORMAT [ARGUMENT]...
+	This is the manual of the PrintF function along with its specification formats.
+
+.SH DESCRIPTION
+	_printf is a custom implementation of the printf function in C. 
+	It allows formatted output to the standard output based on the provided format string.
+   
+.SH CHARACTER TYPE FORMAT
+
+        %c Prints the corresponding ASCII character.
+        %d, %i Signed decimal conversion of an integer.
+        %x, %X Unsigned Hexadecimal Conversion.
+        %p Memory address (pointer).
+        %f Conversion to signed floating point, using decimal point.
+        %o Unsigned octal conversion of an integer.
+        %u Unsigned decimal conversion of an integer
+        %s Character string (terminated in '\0').
+        %% Prints the % symbol.
+
+.SH RETURN VALUE:
+	Returns the number of characters printed (excluding the null byte used to terminate the output) on success. Returns -1 on failure.
+	
+.SH USAGE:
+
+	#include "main.h"
+
+	int main()
+	{
+		_printf("Hello, %s!\n", "world");
+		return 0;
+	}
+
+.SH EXAMPLES:
+
+	Print a string:
+
+	_printf("This is a string: %s\n", "Hello");
+
+	
+	Print an integer:
+
+	_printf("This is an integer: %d\n", 42);
+
+
+.SH NOTE: 
+	This guide should not be solely relied upon..
+	Instead, refer to the documentation provided by your command prompt for a more detailed explanation of the function.
+	Check your command prompt's documentation to understand the specific options that are supported.
+    
+    
+.SH AUTHOR
+	Written by Luis Alfonso Diaz
+    	and by Maria Alejandra Gonzalez.
