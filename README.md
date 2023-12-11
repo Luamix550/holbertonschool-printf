@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-  body {
-    text-align: center;
-  }
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-  h1 {
-    margin-top: 20px
-  }
-</style>
-</head>
 <body>
-
 <h1>PRINTF PROJECT</h1>
 <a href="https://imgur.com/vlZzI1u"><img src="https://i.imgur.com/vlZzI1u.png" title="source: imgur.com" /></a>
 <hr>
@@ -29,6 +14,7 @@
     <p> gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c </p>
   </code>
 </pre>
+
 <h2>REQUIREMENTS</h2>
 <ul>
   <li>Allowed editors: vi, vim, emacs</li>
