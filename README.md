@@ -50,6 +50,6 @@
 <h4>To enter the manual of this function, you must enter the man command and then the file name</h4>
 
 
-<h2>Authors: Maria alejandra , Luis alfonso diaz</h2>
+<h2>Authors: Maria alejandra gonzales, Luis alfonso diaz</h2>
 </body>
 </html>
