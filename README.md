@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<img src="_printf.png" alt="printf function">
 <h1>PRINTF PROJECT</h1>
 <hr>
 
