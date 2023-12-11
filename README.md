@@ -8,6 +8,12 @@
 <h2>Description</h2>
 <p>This project is a simulation of the PrintF function in the C programming language.</p>
 
+<p>Compilation:</p>
+<pre>
+  <code>
+    <p> gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c </p>
+  </code>
+</pre>
 
 <h2>REQUIREMENTS</h2>
 <ul>
@@ -44,6 +50,6 @@
 <h4>To enter the manual of this function, you must enter the man command and then the file name</h4>
 
 
-<h1>Authors: Maria alejandra , Luis alfonso diaz</h1>
+<h2>Authors: Maria alejandra , Luis alfonso diaz</h2>
 </body>
 </html>
