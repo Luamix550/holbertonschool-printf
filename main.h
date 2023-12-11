@@ -2,23 +2,22 @@
 #define MAIN_H
 
 /*libraries*/
-#include <stdio.h>
+#include <limits.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <limits.h>
 
 /*Struct*/
 /**
  * struct funct - structure to access the formats
  * @character: character
  * @function: pointer to function
-*/
-typedef struct funct
-{
-char *character;
-int (*function)(char *, int, va_list list);
+ */
+typedef struct funct {
+  char *character;
+  int (*function)(char *, int, va_list list);
 } func_t;
 
 /*prototypes*/
@@ -30,7 +29,7 @@ int print_chr(char *, int, va_list);
 int print_mod(char *buffer, int counter, va_list __attribute__((unused)));
 
 /*Aux functions*/
-int correct_printf(char *, char*);
+int correct_printf(char *, char *);
 int (*select_funct(char *arg))(char *, int, va_list);
 int program_closure(char *buffer, int counter, va_list args);
 int _select(char *buffer, int counter, char *forma);
