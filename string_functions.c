@@ -7,10 +7,11 @@
  * @list: Number for the list of arguments.
  * Return: 0.
  */
-int print_chr(char *buffer, int counter, va_list list) {
-    buffer[0] = va_arg(list, int);
-    counter++;
-    return (counter);
+int print_chr(char *buffer, int counter, va_list list)
+{
+buffer[0] = va_arg(list, int);
+counter++;
+return (counter);
 }
 
 /**
@@ -20,20 +21,22 @@ int print_chr(char *buffer, int counter, va_list list) {
  * @list: va_list argument.
  * Return: Length to print.
  */
-int print_str(char *buffer, int counter, va_list list) {
-    char *s;
-    int i = 0;
+int print_str(char *buffer, int counter, va_list list)
+{
+char *s;
+int i = 0;
 
-    s = va_arg(list, char *);
-    if (s == NULL)
-        s = "(null)";
+s = va_arg(list, char *);
+if (s == NULL)
+s = "(null)";
 
-    while (s[i] != '\0') {
-        buffer[i] = s[i];
-        i++;
-        counter++;
-    }
-    return (counter);
+while (s[i] != '\0')
+{
+buffer[i] = s[i];
+i++;
+counter++;
+}
+return (counter);
 }
 
 /**
@@ -43,10 +46,11 @@ int print_str(char *buffer, int counter, va_list list) {
  * @list: va_list arguments.
  * Return: Length of the string.
  */
-int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list) {
-    buffer[0] = '%';
-    counter++;
-    return (counter);
+int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list)
+{
+buffer[0] = '%';
+counter++;
+return (counter);
 }
 
 /**
@@ -54,12 +58,14 @@ int print_mod(char *buffer, int counter, va_list __attribute__((unused)) list) {
  * @str: The input string.
  * Return: The length of the string.
  */
-int _strlen(char *str) {
-    int i = 0;
+int _strlen(char *str)
+{
+int i = 0;
 
-    for (; str[i] != '\0'; i++) {
-    }
-    return (i);
+for (; str[i] != '\0'; i++)
+{
+}
+return (i);
 }
 
 /**
@@ -67,13 +73,16 @@ int _strlen(char *str) {
  * @format: The input string to search.
  * Return: The index of the first '%' character, or -1 if not found.
  */
-int _strchr(char *format) {
-    int i = 0;
+int _strchr(char *format)
+{
+int i = 0;
 
-    for (; i < _strlen(format); i++) {
-        if (format[i] == '%') {
-            return (i);
-        }
-    }
-    return (-1);
+for (; i < _strlen(format); i++)
+{
+if (format[i] == '%')
+{
+return (i);
+}
+}
+return (-1);
 }
