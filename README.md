@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<img src="C:\Users\pc\Pictures\Screenshots\_printf.png" alt="printf function">
 <h1>PRINTF PROJECT</h1>
+<a href="https://imgur.com/vlZzI1u"><img src="https://i.imgur.com/vlZzI1u.png" title="source: imgur.com" /></a>
 <hr>
 
 <h2>Description</h2>
