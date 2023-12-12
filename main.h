@@ -15,9 +15,10 @@
  * @character: character
  * @function: pointer to function
  */
-typedef struct funct {
-  char *character;
-  int (*function)(char *, int, va_list list);
+typedef struct funct
+{
+char *character;
+int (*function)(char *, int, va_list list);
 } func_t;
 
 /*prototypes*/
