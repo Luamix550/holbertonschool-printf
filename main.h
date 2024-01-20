@@ -17,8 +17,8 @@
  */
 typedef struct funct
 {
-char *character;
-int (*function)(char *, int, va_list list);
+	char *character;
+	int (*function)(char *, int, va_list list);
 } func_t;
 
 /*prototypes*/

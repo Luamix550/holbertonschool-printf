@@ -7,26 +7,25 @@
  */
 int (*select_funct(char *arg))(char *, int, va_list)
 {
-int i = 0;
-func_t form[] =
+	int i = 0;
+	func_t form[] =
 
-{
-{"i", print_int},
-{"d", print_int},
-{"c", print_chr},
-{"s", print_str},
-{"%", print_mod},
-{NULL, NULL}
-};
+	{	
+	{"i", print_int},
+	{"d", print_int},
+	{"c", print_chr},
+	{"s", print_str},
+	{"%", print_mod},
+	{NULL, NULL}
+	};
 
-while (i < 5)
-{
-if (*arg == *(form[i]).character)
-return ((form[i].function));
-i++;
-}
-
-return (NULL);
+	while (i < 5)
+	{
+		if (*arg == *(form[i]).character)
+		return ((form[i].function));
+		i++;
+	}
+	return (NULL);
 }
 
 /**
@@ -38,10 +37,10 @@ return (NULL);
  */
 int program_closure(char *buffer, int counter, va_list args)
 {
-write(1, buffer, counter);
-free(buffer);
-va_end(args);
-return (counter);
+	write(1, buffer, counter);
+	free(buffer);
+	va_end(args);
+	return (counter);
 }
 
 /**
@@ -53,13 +52,13 @@ return (counter);
  */
 int _select(char *buffer, int counter, char *forma)
 {
-int i = 0;
-while (forma[i])
-{
-buffer[i] = forma[i];
-counter++;
-i++;
-}
+	int i = 0;
+	while (forma[i])
+	{
+		buffer[i] = forma[i];
+		counter++;
+		i++;
+	}
 return (counter);
 }
 
@@ -71,13 +70,13 @@ return (counter);
  */
 int correct_printf(char *format, char *buffer)
 {
-if (!format || !buffer)
-return (0);
+	if (!format || !buffer)
+		return (0);
 
-if (format[0] == '%' && format[1] == '\0')
-return (0);
-else
-return (1);
+	if (format[0] == '%' && format[1] == '\0')
+		return (0);
+	else
+		return (1);
 }
 
 /**
@@ -87,8 +86,8 @@ return (1);
  */
 int verify_format(char v)
 {
-if (v == 'd' || v == 'i' || v == 's' || v == 'c' || v == '%')
-return (0);
-else
-return (1);
+	if (v == 'd' || v == 'i' || v == 's' || v == 'c' || v == '%')
+		return (0);
+	else
+		return (1);
 }
