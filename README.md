@@ -2,7 +2,6 @@
 <html>
 <body>
 <h1>PRINTF PROJECT</h1>
-<blockquote class="imgur-embed-pub" lang="en" data-id="3oxzjru"><a href="https://imgur.com/3oxzjru">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script><hr>
 
 <h2>Description</h2>
 <p>This project is a simulation of the PrintF function in the C programming language.</p>
