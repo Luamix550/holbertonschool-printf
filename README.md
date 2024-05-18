@@ -2,7 +2,7 @@
 <html>
 <body>
 <h1>PRINTF PROJECT</h1>
-
+<a href="https://i.imgur.com/vlZzI1u.png"><img src="https://i.imgur.com/vlZzI1u.png" title="Banner project " /></a>
 <h2>Description</h2>
 <p>This project is a simulation of the PrintF function in the C programming language.</p>
 
